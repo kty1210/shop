@@ -13,7 +13,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.thymeleaf.util.StringUtils;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -70,9 +69,9 @@ class ItemRepositoryTest {
         builder.and(item.itemDetail.like("%" + itemDetail + "%"));
         builder.and(item.price.gt(price));
 
-        if(StringUtils.equals(itemSellStatus, ItemSellStatus.SELL)){
+        /*if(StringUtils.equals(itemSellStatus, ItemSellStatus.SELL)){
             builder.and(item.itemSellStatus.eq(ItemSellStatus.SELL));
-        }
+        }*/
 
         Pageable pageable = PageRequest.of(1, 5);
         Page<Item> page = itemRepository.findAll(builder, pageable);

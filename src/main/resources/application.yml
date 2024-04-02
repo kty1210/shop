@@ -1,6 +1,13 @@
 spring:
   application:
     name: shop
+  devtools:
+    restart:
+      enabled: true
+  livereload:
+    enabled: true
+  cache: false
+
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/webdb
@@ -12,7 +19,7 @@ spring:
         show_sql: true
         format_sql: true
     hibernate:
-      ddl-auto: create
+      ddl-auto: none
     database-platform: org.hibernate.dialect.MySQL8Dialect
 
 logging:
