@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -30,7 +31,7 @@ public class ThymeleafExController {
 
         model.addAttribute("itemDTO", itemDTO);
 
-        return "thymeleafEX/thymeleafEx02";
+        return "thymeleafEx/thymeleafEx02";
     }
 
     @GetMapping("/ex03")
@@ -52,7 +53,7 @@ public class ThymeleafExController {
 
         model.addAttribute("itemDTOList", itemDTOList);
 
-        return "thymeleafEX/thymeleafEx03";
+        return "thymeleafEx/thymeleafEx03";
     }
 
     @GetMapping("/ex04")
@@ -74,6 +75,25 @@ public class ThymeleafExController {
 
         model.addAttribute("itemDTOList", itemDTOList);
 
-        return "thymeleafEX/thymeleafEx04";
+        return "thymeleafEx/thymeleafEx04";
+    }
+
+    @GetMapping("/ex05")
+    public String thymeleafExample05(Model model) {
+
+        return "thymeleafEx/thymeleafEx05";
+    }
+
+    @GetMapping("/ex06")
+    public String thymeleafExample06(@RequestParam("param1") String param1, @RequestParam("param2") String param2, Model model) {
+
+        model.addAttribute("param1", param1);
+        model.addAttribute("param2", param2);
+        return "thymeleafEx/thymeleafEx06";
+    }
+
+    @GetMapping("/ex07")
+    public String thymeleafExample07(){
+        return "thymeleafEx/thymeleafEx07";
     }
 }
