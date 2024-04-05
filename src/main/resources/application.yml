@@ -1,6 +1,10 @@
 spring:
   application:
     name: shop
+  security:
+    user:
+      name: test
+      password: 12345
   devtools:
     restart:
       enabled: true
