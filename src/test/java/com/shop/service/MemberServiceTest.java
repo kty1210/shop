@@ -10,6 +10,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.test.annotation.Commit;
 import org.springframework.transaction.annotation.Transactional;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 @SpringBootTest
 @Transactional
 class MemberServiceTest {
@@ -40,4 +43,19 @@ class MemberServiceTest {
         Member member1 =memberService.saveMember(member);
         System.out.println(member);
     }
+
+    @Test
+    @DisplayName("중복 회원가입테스트")
+    void saveDuplicateMemberTest() {
+        Member member1 = createMember();
+        Member member2 = createMember();
+        memberService.saveMember(member1);
+
+        Throwable e = assertThrows(IllegalStateException.class, () ->{
+            memberService.saveMember(member2);});
+
+        assertEquals("이미 가입된 회원입니다.", e.getMessage());
+    }
+
+
 }

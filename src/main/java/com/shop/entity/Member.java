@@ -3,10 +3,7 @@ package com.shop.entity;
 import com.shop.constant.Role;
 import com.shop.dto.MemberFormDTO;
 import jakarta.persistence.*;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Entity
@@ -15,6 +12,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Setter
 @ToString
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Member {
     
     @Id
