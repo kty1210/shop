@@ -2,6 +2,7 @@ package com.shop.entity;
 
 import com.shop.constant.ItemSellStatus;
 import com.shop.repository.ItemRepository;
+import com.shop.repository.MemberRepository;
 import com.shop.repository.OrderRepository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityNotFoundException;
@@ -30,6 +31,9 @@ class OrderTest {
     @PersistenceContext
     EntityManager em;
 
+    @Autowired
+    MemberRepository memberRepository;
+
     public Item createItem(){
 
         Item item = Item.builder()
@@ -42,6 +46,39 @@ class OrderTest {
                 .updateTime(LocalDateTime.now())
                 .build();
         return item;
+    }
+
+    public Order createOrder(){
+
+        Order order = new Order();
+
+        for(int i=0; i<3; i++){
+            Item item = this.createItem();
+            itemRepository.save(item);
+            OrderItem orderItem = OrderItem.builder()
+                    .item(item)
+                    .count(10)
+                    .orderPrice(1000)
+                    .order(order)
+                    .build();
+            order.getOrderItems().add(orderItem);
+        }
+
+        Member member = new Member();
+        memberRepository.save(member);
+
+        order.setMember(member);
+        orderRepository.save(order);
+        return order;
+    }
+
+    @Test
+    @DisplayName("고아객체 제거 테스트")
+    @Commit
+    public void orphanRemovalTest(){
+        Order order = this.createOrder();
+        order.getOrderItems().remove(0);
+        em.flush();
     }
 
     @Test
@@ -71,4 +108,6 @@ class OrderTest {
 
         assertEquals(3, saveOrder.getOrderItems().size());
     }
+
+
 }
