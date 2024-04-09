@@ -5,6 +5,7 @@ import lombok.Getter;
 
 @Entity
 @Getter
+//카멜 케이스 -> 자동으로 스네이크 케이스로 바뀌어서 테이블 생성
 public class CartItem {
 
     @Id
