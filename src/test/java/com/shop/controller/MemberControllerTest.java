@@ -40,6 +40,7 @@ class MemberControllerTest {
 
     @Test
     @DisplayName("로그인 성공 테스트")
+    //@Commit
     public void loginSuccessTest() throws Exception{
         String email = "test@email.com";
         String password = "12345";
