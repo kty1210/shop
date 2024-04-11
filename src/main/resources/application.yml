@@ -3,7 +3,7 @@ spring:
     name: shop
   security:
     user:
-      name: test
+      name: test@test.com
       password: 12345
   devtools:
     restart:
@@ -23,7 +23,7 @@ spring:
         show_sql: true
         format_sql: true
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     database-platform: org.hibernate.dialect.MySQL8Dialect
 
 logging:
