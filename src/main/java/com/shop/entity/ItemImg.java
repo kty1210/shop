@@ -1,11 +1,12 @@
-package com.shop.config.common.entity;
+package com.shop.entity;
 
-import com.shop.entity.Item;
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Getter
+@Setter
 public class ItemImg {
 
     @Id

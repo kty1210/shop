@@ -1,4 +1,4 @@
-package com.shop.config.common.entity;
+package com.shop.entity;
 
 import static com.querydsl.core.types.PathMetadataFactory.*;
 
@@ -8,7 +8,6 @@ import com.querydsl.core.types.PathMetadata;
 import javax.annotation.processing.Generated;
 import com.querydsl.core.types.Path;
 import com.querydsl.core.types.dsl.PathInits;
-import com.shop.entity.ItemImg;
 
 
 /**
@@ -17,7 +16,7 @@ import com.shop.entity.ItemImg;
 @Generated("com.querydsl.codegen.DefaultEntitySerializer")
 public class QItemImg extends EntityPathBase<ItemImg> {
 
-    private static final long serialVersionUID = 1445701639L;
+    private static final long serialVersionUID = -2019766640L;
 
     private static final PathInits INITS = PathInits.DIRECT2;
 
@@ -29,7 +28,7 @@ public class QItemImg extends EntityPathBase<ItemImg> {
 
     public final StringPath imgUrl = createString("imgUrl");
 
-    public final com.shop.entity.QItem item;
+    public final QItem item;
 
     public final StringPath oriImgName = createString("oriImgName");
 
@@ -53,7 +52,7 @@ public class QItemImg extends EntityPathBase<ItemImg> {
 
     public QItemImg(Class<? extends ItemImg> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
-        this.item = inits.isInitialized("item") ? new com.shop.entity.QItem(forProperty("item")) : null;
+        this.item = inits.isInitialized("item") ? new QItem(forProperty("item")) : null;
     }
 
 }
