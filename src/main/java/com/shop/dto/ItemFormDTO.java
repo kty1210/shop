@@ -4,8 +4,7 @@ import com.shop.constant.ItemSellStatus;
 import com.shop.entity.Item;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.modelmapper.ModelMapper;
 
 import java.util.ArrayList;
@@ -13,6 +12,9 @@ import java.util.List;
 
 @Getter
 @Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class ItemFormDTO {
 
     private Long id;

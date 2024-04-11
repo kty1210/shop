@@ -1,11 +1,14 @@
 package com.shop.service;
 
+import org.springframework.stereotype.Service;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.UUID;
 
 import static org.hibernate.query.sqm.tree.SqmNode.log;
 
+@Service
 public class FileService {
 
     public String uploadFile(String uploadPath, String originalFileName, byte[] fileData) throws Exception{
