@@ -1,4 +1,4 @@
-package com.shop.config.common.entity;
+package com.shop.entity;
 
 import static com.querydsl.core.types.PathMetadataFactory.*;
 
@@ -15,13 +15,13 @@ import com.querydsl.core.types.Path;
 @Generated("com.querydsl.codegen.DefaultSupertypeSerializer")
 public class QBaseEntity extends EntityPathBase<BaseEntity> {
 
-    private static final long serialVersionUID = 329319005L;
+    private static final long serialVersionUID = -1307286732L;
 
     public static final QBaseEntity baseEntity = new QBaseEntity("baseEntity");
 
     public final QBaseTimeEntity _super = new QBaseTimeEntity(this);
 
-    public final StringPath createBy = createString("createBy");
+    public final StringPath createdBy = createString("createdBy");
 
     public final StringPath modifiedBy = createString("modifiedBy");
 

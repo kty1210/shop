@@ -19,12 +19,12 @@ public class QMember extends EntityPathBase<Member> {
 
     public static final QMember member = new QMember("member1");
 
-    public final com.shop.config.common.entity.QBaseEntity _super = new com.shop.config.common.entity.QBaseEntity(this);
+    public final QBaseEntity _super = new QBaseEntity(this);
 
     public final StringPath address = createString("address");
 
     //inherited
-    public final StringPath createBy = _super.createBy;
+    public final StringPath createdBy = _super.createdBy;
 
     public final StringPath email = createString("email");
 

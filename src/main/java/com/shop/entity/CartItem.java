@@ -1,6 +1,5 @@
 package com.shop.entity;
 
-import com.shop.config.common.entity.BaseEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
 

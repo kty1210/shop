@@ -1,6 +1,5 @@
 package com.shop.entity;
 
-import com.shop.config.common.entity.BaseEntity;
 import com.shop.constant.OrderStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

@@ -1,6 +1,5 @@
 package com.shop.entity;
 
-import com.shop.config.common.entity.BaseEntity;
 import com.shop.constant.Role;
 import com.shop.dto.MemberFormDTO;
 import jakarta.persistence.*;
