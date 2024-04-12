@@ -1,6 +1,7 @@
 package com.shop.entity;
 
 import com.shop.constant.ItemSellStatus;
+import com.shop.dto.ItemFormDTO;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -29,7 +30,7 @@ public class Item {
     @Column(nullable = false)
     private int stockNumber; // 재고수량
 
-    @Lob
+    @Lob  // 대용량의 데이터를 저장
     @Column(nullable = false)
     private String itemDetail; // 상품 상세 설명
 
@@ -40,4 +41,11 @@ public class Item {
 
     private LocalDateTime updateTime; // 수정 시간
 
+    public void updateItem(ItemFormDTO itemFormDTO) {
+        this.itemNm = itemFormDTO.getItemNm();
+        this.price = itemFormDTO.getPrice();
+        this.stockNumber = itemFormDTO.getStockNumber();
+        this.itemDetail = itemFormDTO.getItemDetail();
+        this.itemSellStatus = itemFormDTO.getItemSellStatus();
+    }
 }
