@@ -100,4 +100,10 @@ public class ItemController {
                     return "item/itemMng";
     }
 
+    @GetMapping("/item/{itemId}")
+    public String itemDetail(Model model, @PathVariable("itemId") Long itemId){
+        ItemFormDTO itemFormDTO = itemService.getItemDtl(itemId);
+        model.addAttribute("item", itemFormDTO);
+        return "item/itemDetail";
+    }
 }
