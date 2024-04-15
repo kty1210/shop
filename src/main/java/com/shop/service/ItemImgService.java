@@ -16,7 +16,8 @@ import org.thymeleaf.util.StringUtils;
 public class ItemImgService {
 
     //yaml의 경로
-    @Value("${itemImgLocation}")
+    //@Value("${itemImgLocation}")
+    @Value("file:///D:/shopItem/item")
     private String itemImgLocation;
 
     private final ItemImgRepository itemImgRepository;
