@@ -34,7 +34,7 @@ spring:
     database-platform: org.hibernate.dialect.MySQL8Dialect
 
 
-itemImgLocation: D:/shopItem/Item
+itemImgLocation: D:/shopItem/item
 
 uploadPath: file:///D:shopItem
 
