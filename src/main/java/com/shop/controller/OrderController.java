@@ -1,26 +1,45 @@
 package com.shop.controller;
 
 import com.shop.dto.OrderDTO;
+import com.shop.dto.OrderHistDTO;
 import com.shop.service.OrderService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequiredArgsConstructor
 public class OrderController {
 
     private final OrderService orderService;
+
+    //구매이력 조회
+    @GetMapping({"/orders", "/orders/{page}"}) //@PathVariable을 이용한 동적 처리
+    public String orderHist(@PathVariable("page") Optional<Integer> page,
+                            Principal principal, Model model){
+        Pageable pageable = PageRequest.of(page.isPresent() ? page.get() : 0,4); // 주문 개수
+
+        Page<OrderHistDTO> ordersHistDTOList =
+                orderService.getOrderList(principal.getName(), pageable);
+
+        model.addAttribute("orders", ordersHistDTOList);
+        model.addAttribute("page", pageable.getPageNumber());
+        model.addAttribute("maxPage", 5);
+        return "order/orderHist";
+    }
 
     // 주문 기능 구현
     @PostMapping("/order")
