@@ -22,11 +22,19 @@ public class QOrderItem extends EntityPathBase<OrderItem> {
 
     public static final QOrderItem orderItem = new QOrderItem("orderItem");
 
+    public final QBaseEntity _super = new QBaseEntity(this);
+
     public final NumberPath<Integer> count = createNumber("count", Integer.class);
+
+    //inherited
+    public final StringPath createdBy = _super.createdBy;
 
     public final NumberPath<Long> id = createNumber("id", Long.class);
 
     public final QItem item;
+
+    //inherited
+    public final StringPath modifiedBy = _super.modifiedBy;
 
     public final QOrder order;
 
