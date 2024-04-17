@@ -17,7 +17,7 @@ public class ItemImgService {
 
     //yaml의 경로
     //@Value("${itemImgLocation}")
-    @Value("file:///D:/shopItem/item")
+    @Value("file:///C:/shopItem/item")
     private String itemImgLocation;
 
     private final ItemImgRepository itemImgRepository;
