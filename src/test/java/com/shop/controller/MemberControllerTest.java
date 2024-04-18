@@ -10,6 +10,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.test.web.servlet.response.SecurityMockMvcResultMatchers;
+import org.springframework.test.annotation.Commit;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -40,7 +41,7 @@ class MemberControllerTest {
 
     @Test
     @DisplayName("로그인 성공 테스트")
-    //@Commit
+    @Commit
     public void loginSuccessTest() throws Exception{
         String email = "test@email.com";
         String password = "12345";
