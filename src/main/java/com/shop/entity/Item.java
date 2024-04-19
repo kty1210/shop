@@ -42,6 +42,10 @@ public class Item extends BaseEntity{
 
     private LocalDateTime updateTime; // 수정 시간
 
+    public void addStock(int stockNumber){
+        this.stockNumber += stockNumber;
+    }
+
     public void updateItem(ItemFormDTO itemFormDTO) {
         this.itemNm = itemFormDTO.getItemNm();
         this.price = itemFormDTO.getPrice();
