@@ -34,6 +34,10 @@ public class OrderItem extends BaseEntity{
 
     private LocalDateTime updateTime;
 
+    public void cancel(){
+        this.getItem().addStock(count);
+    }
+
     public static OrderItem createOrderItem(Item item, int count){
         OrderItem orderItem = new OrderItem();
         orderItem.setItem(item);
