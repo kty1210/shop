@@ -36,6 +36,15 @@ public class Order extends BaseEntity {
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<OrderItem> orderItems = new ArrayList<>();
 
+    //취소 상품 재고 추가 + 주문상태 취소상태 변경
+    public void cancelOrder(){
+        this.orderStatus = OrderStatus.CANCEL;
+
+        for(OrderItem orderItem : orderItems){
+            orderItem.cancel();
+        }
+    }
+
     //주문 상품(OrderItem) 정보 추가
     public void addOrderItem(OrderItem orderItem) {
         orderItems.add(orderItem);
