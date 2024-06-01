@@ -1,3 +1,6 @@
+<a name="readme-top"></a>
+
+
 🛫 개인 부트 쇼핑몰 프로젝트
 ==
 <br/>
@@ -14,15 +17,15 @@
 
 
 
-시큐리티
+부트 이해하기 위한 프로젝트
 
 <br/>
 
-JPA
+게시판 CRUD + 파일 업로드
 
 <br/>
 
-Thymeleaf
+Thymeleaf 사용
 
 <br/>
 <br/>
@@ -46,15 +49,13 @@ Thymeleaf
 
 
 * <img src="https://img.shields.io/badge/Java-FF0000?style=for-the-badge&logo=Java&logoColor=white">
+* <img src="https://img.shields.io/badge/springboot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white">
+* <img src="https://img.shields.io/badge/thymeleaf-005F0F?style=for-the-badge&logo=thymeleaf&logoColor=white">
 * <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white">
-* <img src="https://img.shields.io/badge/jsp-FA6423?style=for-the-badge&logo=jsp&logoColor=white">
-* <img src="https://img.shields.io/badge/spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white">
-* <img src="https://img.shields.io/badge/oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white">
+* <img src="https://img.shields.io/badge/jquery-0769AD?style=for-the-badge&logo=jqueryt&logoColor=white">
+* <img src="https://img.shields.io/badge/jpa-E53525?style=for-the-badge&logo=jpa&logoColor=white">
+* <img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white">
 * <img src="https://img.shields.io/badge/openjdk-000000?style=for-the-badge&logo=openjdk&logoColor=white">
-* <img src="https://img.shields.io/badge/apachetomcat-F8DC75?style=for-the-badge&logo=apachetomcat&logoColor=white">
-* <img src="https://img.shields.io/badge/gitkraken-179287?style=for-the-badge&logo=gitkraken&logoColor=white">
-* <img src="https://img.shields.io/badge/postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white">
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -92,7 +93,7 @@ Thymeleaf
 
 ## :clock3: 클래스 다이어그램
 
-![classdiagram](https://github.com/kty1210/NewSpringProject/assets/154123644/289a844b-cee0-4510-95e5-2d72ac3a6016)
+![shop](https://github.com/kty1210/shop/assets/154123644/8486a138-2d10-4b14-aa8d-13013f97fb8f)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -104,7 +105,7 @@ Thymeleaf
 
 ## :clock4: 엔티티 관계도
 
-![image](https://github.com/kty1210/NewSpringProject/assets/154123644/dcdfbc1f-8902-4397-9278-f980cf541ee3)
+![shopdb](https://github.com/kty1210/shop/assets/154123644/30db9d33-b40f-4d21-b74d-e289e80d710a)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -113,61 +114,11 @@ Thymeleaf
 <br/>
 <br/>
 
-## :clock5: 기능 시연
+## :clock5: 사이트 레이아웃
 
 <br/>
 
-<br/> ✦ 메인 페이지 <br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
-<br/> ✦ 조건 검색 <br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
-<br/> ✦ 페이지네이션 <br/>
-<br/>
-<br/>
-<br/>
-<br/>
- 
-
-<br/> ✦ 업로드 <br/>
-
-<br/>
-<br/>
-<br/>
-<br/>
-
-
-
-<br/> ✦ 상세 페이지 <br/>
-
-
-<br/>
-<br/>
-<br/>
-<br/>
-
-<br/> ✦ 글 수정 <br/>
-
-<br/>
-<br/>
-<br/>
-<br/>
-
-
-<br/> ✦ 댓글 <br/>
-
-<br/>
-<br/>
-<br/>
-<br/>
-
+![image](https://github.com/kty1210/shop/assets/154123644/a6b51f33-fa9f-43f2-ad3d-e3ab84db5076)
 
 
 
@@ -192,9 +143,10 @@ Thymeleaf
 
 개선할 점
 
-* 
+* 코드 최적화 필요
+* 절대경로 -> 상대경로 리팩토링 필요
 
 
 긍정적인 측면
 
-*
+* spring boot를 이해하는데 있어서 도움이 됐다
